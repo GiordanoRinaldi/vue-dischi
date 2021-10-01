@@ -21,5 +21,12 @@ export default {
 </script>
 <style lang="scss">
 
+@import "./assets/style/common.scss";
+
+#app{
+  height: 100vh;
+  background-color: $colorBody;
+}
+
 
 </style>

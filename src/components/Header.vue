@@ -1,6 +1,6 @@
 <template>
     <header>
-        <div class="container-fluid ms-2 ">
+        <div class="container-fluid wrapper">
             <img  src="../assets/image/spotify-logo.png" alt="logo spotify">
         </div>
     </header>
