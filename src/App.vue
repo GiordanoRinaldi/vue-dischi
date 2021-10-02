@@ -24,7 +24,7 @@ export default {
 @import "./assets/style/common.scss";
 
 #app{
-  height: 100vh;
+  min-height: 100vh;
   background-color: $colorBody;
 }
 
