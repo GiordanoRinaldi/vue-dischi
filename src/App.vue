@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header @filter="filterGenre" />
+    <Header @filter="filterGenre" :genreLists="genreLists"/>
     <main>
-      <Albums :selectedGenre="genreSelected" />
+      <Albums :selectedGenre="genreSelected" @genreList="genreAppear" />
     </main>
   </div>
 </template>
@@ -20,11 +20,16 @@ export default {
   data(){
     return {
       genreSelected: "",
+      genreLists: [],
+
     }
   },
   methods: {
     filterGenre(selectedGenre){
       this.genreSelected = selectedGenre
+    },
+    genreAppear(list) {
+      this.genreLists = list;
     }
   },
 }

@@ -5,10 +5,7 @@
 
             <select class="form-select" aria-label="Default select example" v-model="genre" @change="$emit('filter', genre)" >
                 <option value="">Filtra per genere </option>
-                <option  value="Rock">Rock </option>
-                <option  value="Jazz">Jazz </option>
-                <option  value="Metal">Metal </option>
-                <option  value="Pop">Pop </option>
+                <option v-for="genres in genreLists" :value="genres" :key="genres">{{genres}}</option>
             </select>
         </div>
     </header>
@@ -17,6 +14,7 @@
 <script>
 export default {
     name: "Header",
+    props: ["genreLists"],
     data() {
         return {
             genre: ""

@@ -23,22 +23,23 @@ export default {
   data(){
     return{
       albums: [],
-      genre: [],
     }
   },
   created(){
     axios.get("https://flynn.boolean.careers/exercises/api/array/music")
     .then( (res) => {
       this.albums= res.data.response;
+      const genreList = [];
       this.albums.forEach(
         (elm) => {
-          if (!this.genre.includes(elm.genre)){
-            this.genre.push(elm.genre);
+          if (!genreList.includes(elm.genre)){
+            genreList.push(elm.genre);
           }
         }
       );
-      
-    } );
+
+      this.$emit('genreList', genreList)
+    });
   },
   computed: {
     albumsFiltered() {
