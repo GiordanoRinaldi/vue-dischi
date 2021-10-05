@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header @filter="filterGenre" />
     <main>
-      <Albums/>
+      <Albums :selectedGenre="genreSelected" />
     </main>
   </div>
 </template>
@@ -16,7 +16,17 @@ export default {
   components: {
     Header,
     Albums
-  }
+  },
+  data(){
+    return {
+      genreSelected: "",
+    }
+  },
+  methods: {
+    filterGenre(selectedGenre){
+      this.genreSelected = selectedGenre
+    }
+  },
 }
 </script>
 <style lang="scss">
